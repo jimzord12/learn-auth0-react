@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    "module": "ESNext",
+    "target": "ES2020",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "checkJs": false, // Its like having everywhere "//@ts-check
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    // "strict": true, // does not allow
+    "forceConsistentCasingInFileNames": true, //import user from "./User"; // ❌ Error if file is actually "user.ts"
+    "moduleResolution": "node", // Essential for projects using npm packages.
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+
+    // Prevents TypeScript from generating .js output.
+    // Useful when using TypeScript for type-checking only
+    "noEmit": true,
+    "jsx": "react-jsx", // When using React v17+
+    "baseUrl": ".",
+    "paths": {
+      "@src/*": ["src/*"],
+      "@assets/*": ["src/@core/assets/*"],
+      "@components/*": ["src/@core/components/*"],
+      "@layouts/*": ["src/@core/layouts/*"],
+      "@store/*": ["src/redux/*"],
+      "@styles/*": ["src/@core/scss/*"],
+      "@configs/*": ["src/configs/*"],
+      "@utils/*": ["src/utility/Utils/*"],
+      "@hooks/*": ["src/utility/hooks/*"],
+      "@types/*": ["src/types/*"]
+    }
+  },
+  "exclude": ["node_modules", "build"],
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.js", "src/**/*.jsx", "eslintrc.js", "craco.config.js"]
+}
